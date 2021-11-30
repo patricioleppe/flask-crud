@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+comandos.txt
+comandos2.txt
+wampa.txt
+workspace.code-workspace

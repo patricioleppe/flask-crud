@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block header %}
+    <!--h1>{% block title %}Mantenedor Productos{% endblock %}</h1-->
+{% endblock %}
+
+{% block content %}
+    {% if g.user %}
+
+
+<table>
+    <tr>
+        <td>
+            <div class="col-md-3">
+                <form method="POST" action="/actualiza_producto/{{ prod['id'] }}">
+                    <div class="card" style="width: 18rem;">
+                        <ul class="list-group list-group-flush">
+
+                            <li class="list-group-item">
+                                
+                                <div class="form-floating mb-1" align="center">
+                                    
+                                   <strong>EDITAR PRODUCTO</strong>
+                                </div>
+                            </li> 
+
+                            <li class="list-group-item">
+                                
+                                <div class="form-floating mb-1">
+                                    <input type="text" size="20" name="codigo" class="form-control" id="floatingInput" disabled value="{{ prod['codigo'] }}" >
+                                    <label for="floatingInput">Codigo</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-floating">
+                                    <input type="text" size="30" name="nombre" class="form-control" id="floatingPassword" value="{{ prod['nombre'] }}" required>
+                                    <label for="floatingInput">Nombre</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-floating">
+                                    <input type="text" size="50" name="descripcion" class="form-control" id="floatingPassword" value="{{ prod['descripcion'] }}" required>
+                                    <label for="floatingInput">Descripcion</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-floating">
+                                    <input type="text" size="30" name="marca" class="form-control" id="floatingPassword" value="{{ prod['marca'] }}" required>
+                                    <label for="floatingInput">Marca</label>
+                                </div>
+                            </li>
+                            
+                            <li class="list-group-item">
+                                <div class="form-floating">
+                                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                                    <a href="{{ url_for('crud.agrega_producto') }}"><button type="button" class="btn btn-danger" >Cancelar</button></a>
+                                    
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </td>
+    </tr>
+</table>
+
+     
+        
+{% endif %}
+{% endblock %}

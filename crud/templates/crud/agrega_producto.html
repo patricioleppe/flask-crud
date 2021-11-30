@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block header %}
+    <!--h1>{% block title %}Mantenedor Productos{% endblock %}</h1-->
+{% endblock %}
+
+{% block content %}
+    
+    <div class="contenido">
+        <div class="divInputs">
+            <form method="POST" name="form" id="form">
+
+            <table class="table table-hover table-striped table-bordered table-sm">
+                <tr>
+                    <td><label for="floatingInput">Seleccione Tipo</label>
+                        <select name="tipo" id="tipo" class="form-select-sm" aria-label="Default select example" required>
+                            <option value=""></option>
+                            
+                                <option value="PINT">PINTURAS</option>
+                            
+                                <option value="PINC">PINCELES</option>
+                            
+                                <option value="MACE">MACETEROS</option>
+                            
+                                <option value="BAST">BASTIDORES</option>
+                            
+                                <option value="SELL">SELLANTES</option>
+                            
+                                <option value="BROC">BROCHAS</option>
+                            
+                                <option value="LIBR">LIBRERIA</option>
+                            
+                            </select>
+                        
+                    </td>
+                    <td>
+                        <label for="floatingInput">Codigo</label>
+                        <input type="text"  name="codigo" class="form-control-sm " id="codigo" required readonly>
+                        
+                    </td>
+                    <td>
+                        <label for="floatingInput">Nombre</label>
+                        <input type="text" name="nombre" class="form-control-sm" id="nombre" required>
+                        
+                    </td>
+                    <td>
+                        <label for="floatingInput">Descripcion</label>
+                        <input type="text"  name="descripcion" class="form-control-sm" id="floatingPassword" required>
+                        
+                    </td>
+                    <td>
+                        <label for="floatingInput">Marca</label>
+                        <input type="text"  name="marca" class="form-control-sm" id="floatingPassword" required>
+                        
+                    </td>
+                    <td>
+                        <label for="floatingInput"></label>
+                        <button type="submit" class="btn btn-success btn-sm">Aceptar</button>
+                    </td>
+                    
+                </tr>
+            </table>
+            </form>
+        </div>
+        <div class="divDatos">
+            <table class="table table-hover table-striped table-bordered table-sm">
+                <tr>
+                    <th class="col-sm-1">ID</th>
+                    <th class="col-sm-2">CODIGO</th>
+                    <th class="col-sm-4">NOMBRE</th>
+                    <th class="col-sm-4">DESCRIPCIÓN</th>
+                    <th class="col-sm-3">MARCA</th>
+                    <th class="col-sm-5"></th>
+                    <th class="col-sm-5"></th>
+                    {% for prods in prod %}
+                        <tr>
+                            <td>{{ prods["id"] }}</td>
+                            <td>{{ prods["codigo"] }}</td>
+                            <td>{{ prods["nombre"] }}</td>
+                            <td>{{ prods["descripcion"] }}</td>
+                            <td>{{ prods["marca"] }}</td>
+                            <td><a href="/edita_producto/{{ prods["id"] }}" class="btn btn-secondary btn-sm">Editar</a></td>
+                            <td><a href="/borrar_producto/{{ prods["id"] }}" class="btn btn-danger btn-delete btn-sm">Eliminar</a></td>
+                        </tr>
+                    {% endfor %}
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+{% endblock %}

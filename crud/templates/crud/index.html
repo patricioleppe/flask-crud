@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block header %}
+    <!--h1>{% block title  %} Modulos. {% endblock %}</h1-->  
+        {% for mods in mod %}
+                <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+                    <a href="{{ url_for('crud.agrega_producto') }}" class="modulos">
+                    <div class="card-header">
+                    {{ mods['nombre'] }}
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <p class="card-text">{{ mods['descripcion'] }}</p>
+                    </div>
+                    </a>
+                </div>
+        {% endfor %}
+{% endblock %}
+

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block header %}
+<h1>{% block title %} Login {% endblock %}</h1>
+{% endblock %}
+{% block content %}
+
+<form method="post">
+
+<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+    
+    <div class="form-floating mb-1">
+      <input type="text" name="username" class="form-control" id="floatingInput" >
+      <label for="floatingInput">Usuario</label>
+    </div>
+    </li>
+    <li class="list-group-item">
+    <div class="form-floating">
+      <input type="password" name="password" class="form-control" id="floatingPassword" >
+      <label for="floatingPassword">Password</label>
+    </div>
+    </li>
+
+    <li class="list-group-item">
+    <div class="form-floating">
+      <button type="submit" class="btn btn-primary">Aceptar</button
+    </div>
+    </li>
+    
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+{% endblock %}
