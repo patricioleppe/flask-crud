@@ -44,7 +44,7 @@ def agrega_producto():
             #return redirect(url_for('todo.agrega_producto',hol=hol))
             
         elif not codigo:
-            error="Ingrese un codigo es requerida"
+            error="Ingrese un codigo, es requerido"
         elif not nombre:
             error="Ingrese un codigo es requerida"
         elif not descripcion:
