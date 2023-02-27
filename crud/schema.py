@@ -41,5 +41,12 @@ instructions = [
         marca varchar(50),
         tipo varchar(10)
     )"""
+    , 
+    """CREATE TABLE productos_tipo(
+        id int PRIMARY KEY AUTO_INCREMENT,
+        codigo varchar(50),
+        descripcion varchar(100)
+        
+    )"""
     
 ] 
